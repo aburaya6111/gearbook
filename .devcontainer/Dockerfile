@@ -20,6 +20,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Install Rust components
 RUN  rustup  update  \
     && rustup component add rls rust-analysis rust-src rustfmt clippy 2>&1 
+RUN cargo install cargo-edit
 RUN find  /usr/local/cargo/bin/ -exec chmod 777 {} \; 
 
 
